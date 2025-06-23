@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Payment</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <form id="payment-form">
+    <h2>Payment</h2>
+    <input type="text" placeholder="Card Number" required><br>
+    <input type="text" placeholder="Expiry Date" required><br>
+    <input type="text" placeholder="CVV" required><br>
+    <input type="submit" value="Pay Now">
+  </form>
+
+  <script>
+    document.getElementById("payment-form").addEventListener("submit", e => {
+      e.preventDefault();
+      alert("Payment successful!");
+    });
+  </script>
+</body>
+</html>

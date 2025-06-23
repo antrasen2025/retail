@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sign In - ShopZone</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <h1 class="logo">ShopZone</h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="cart.html">Cart</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="signin.html">Sign In</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="form-container">
+    <form id="signin-form">
+      <h2>Sign In to Your Account</h2>
+      <label for="username">Username</label>
+      <input type="text" id="username" required />
+
+      <label for="password">Password</label>
+      <input type="password" id="password" required />
+
+      <input type="submit" value="Login" />
+    </form>
+  </main>
+
+  <!-- <script>
+    const signinForm = document.getElementById("signin-form");
+    if (signinForm) {
+      signinForm.addEventListener("submit", e => {
+        e.preventDefault();
+        alert("Signed in successfully!");
+        console.log("User signed in with username:", username.value);
+      });
+    }
+  </script> -->
+  <script src="script.js"></script>
+
+</body>
+</html>

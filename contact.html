@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact Us - ShopZone</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <h1 class="logo">ShopZone</h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="cart.html">Cart</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="signin.html">Sign In</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="contact-container">
+    <section class="contact-form">
+      <h2>We’d love to hear from you</h2>
+      <form id="contact-form">
+        <label for="name">Name</label>
+        <input type="text" id="name" required />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" required />
+
+        <label for="message">Message</label>
+        <textarea id="message" rows="5" required></textarea>
+
+        <label for="file">Upload File</label>
+        <input type="file" id="file" />
+
+        <input type="submit" value="Send Message" />
+      </form>
+    </section>
+
+    <section class="contact-video">
+      <h3>Watch Our Story</h3>
+      <video width="100%" controls>
+        <source src="sample.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </section>
+  </main>
+
+  <!-- <script>
+    document.getElementById("contact-form").addEventListener("submit", e => {
+      e.preventDefault();
+      alert("Thank you! Your message has been sent.");
+      console.log("Contact form submitted successfully");
+    });
+  </script> -->
+
+  <script src="script.js"></script>
+
+</body>
+</html>
