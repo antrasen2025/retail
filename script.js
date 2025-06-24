@@ -322,8 +322,16 @@ function addToCart(id) {
     localStorage.setItem("cart", JSON.stringify(cart));
     alert(`${product.name} added to cart!`);
     console.log("🛒 Added to cart:", product);
+
+    // Trigger GA4 event
+    gtag('event', 'add_to_cart', {
+      product_name: product.name,
+      product_price: product.price,
+      product_category: 'Accessories' // Or use product.category if defined
+    });
   }
 }
+
 
 function renderCart() {
   const container = document.getElementById("cart-items");
@@ -362,6 +370,12 @@ function removeFromCart(index) {
     localStorage.setItem("cart", JSON.stringify(cart));
     renderCart();
     console.log("❌ Removed from cart:", removed);
+
+     // GA4 Event
+    gtag('event', 'remove_from_cart', {
+      product_name: removed.name,
+      product_price: removed.price
+    });
   }
 }
 
@@ -383,6 +397,14 @@ if (contactForm) {
     console.log("Email:", email);
     console.log("Message:", message);
     console.log("File:", file ? file.name : "No file uploaded");
+    
+    gtag('event', 'form_submit', {
+      form_type: 'contact_form',
+      name: name,
+      email: email,
+      message_length: message.length
+    });
+
   });
 }
 
@@ -400,6 +422,20 @@ if (signinForm) {
       alert("Signed in successfully!");
       console.log("🔐 Sign-In Attempt:");
       console.log("Username:", username);
+
+      // GA4 Event
+      gtag('event', 'login', {
+        method: 'email_password',
+        user_role: 'signed_in',
+        username: username
+      });
+
+      // Optionally: Set user property
+      gtag('set', {
+        user_properties: {
+          role: 'signed_in'
+        }
+      });
     //   console.log("Password:", password); // Caution: For demo only — never log passwords in real apps!
     } else {
       alert("Please fill in both fields.");
