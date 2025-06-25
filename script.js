@@ -442,6 +442,19 @@ if (signinForm) {
     }
   });
 }
+const link = document.createElement("a");
+link.href = "https://antrasen2025.github.io/retail/index.html";
+link.target = "_blank";
+link.innerText = "Visit Example";
+link.onclick = function () {
+  dataLayer.push({
+    event: 'custom_link_click',
+    link_url: this.href,
+    link_text: this.innerText
+  });
+};
+document.body.appendChild(link); // Or append wherever you want the link to appear
+
 
 // -------------------------
 // Initialize
