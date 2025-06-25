@@ -30,6 +30,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </nav>
     </div>
   </header>
+ <a href="https://example.com" target="_blank" onclick="dataLayer.push({
+  'event': 'custom_link_click',
+  'link_url': this.href,
+  'link_text': this.innerText
+ })">Visit Example</a>
 
   <main>
     <section class="products" id="product-list"></section>
