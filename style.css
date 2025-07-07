@@ -581,11 +581,11 @@ input[type="submit"]:hover {
   height: auto;
 }
 
-.hero-overlay {
+/* .hero-overlay {
   background: none;
   backdrop-filter: none;
   padding: 0;
-}
+} */
 
 
 .cta-button {
