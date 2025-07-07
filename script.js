@@ -408,3 +408,10 @@ if (orderList && totalAmount) {
   totalAmount.textContent = total;
   });
 }
+document.addEventListener("DOMContentLoaded", () => {
+  renderProducts();
+  renderCart();
+});
+renderProducts();
+renderCart();
+
