@@ -411,6 +411,11 @@ section {
   font-size: 1.2rem;
   margin-bottom: 1.5rem;
 }
+.hero-overlay h2,
+.hero-overlay p {
+  color: black; /* <-- ensure both are explicitly black */
+}
+
 
 .cta-button {
   background: white;
