@@ -67,7 +67,7 @@ function addToCart(id) {
 // Cart Rendering
 // -------------------------
 function renderCart() {
-  const container = document.getElementById("cart-items");
+  const container = document.getElementById("product-list");
   if (!container) return;
 
   container.innerHTML = "";
