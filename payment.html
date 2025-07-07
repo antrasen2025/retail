@@ -1,34 +1,93 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-T2LZ2BWC');</script>
-<!-- End Google Tag Manager -->
-  <title>Payment</title>
-  <link rel="stylesheet" href="style.css">
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-T2LZ2BWC');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <meta charset="UTF-8" />
+  <title>Payment - ShopZone</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T2LZ2BWC"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-  <form id="payment-form">
-    <h2>Payment</h2>
-    <input type="text" placeholder="Card Number" required><br>
-    <input type="text" placeholder="Expiry Date" required><br>
-    <input type="text" placeholder="CVV" required><br>
-    <input type="submit" value="Pay Now">
-  </form>
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T2LZ2BWC"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <header>
+    <div class="navbar">
+      <h1 class="logo">ShopZone</h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="cart.html">Cart</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="payment.html">Payment</a></li>
+          <li><a href="signin.html">Sign In</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="payment-container">
+    <section class="order-summary">
+      <h2>Order Summary</h2>
+      <ul id="order-list"></ul>
+      <p><strong>Total:</strong> $<span id="total-amount">0</span></p>
+    </section>
+
+    <section class="payment-form">
+      <form id="payment-form">
+        <h2>Payment Details</h2>
+        <label>Card Number</label>
+        <input type="text" placeholder="1234 5678 9012 3456" required />
+
+        <label>Expiry Date</label>
+        <input type="text" placeholder="MM/YY" required />
+
+        <label>CVV</label>
+        <input type="text" placeholder="123" required />
+
+        <input type="submit" value="Pay Now" />
+      </form>
+    </section>
+  </main>
 
   <script>
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    function displaySummary() {
+      const orderList = document.getElementById("order-list");
+      const totalAmount = document.getElementById("total-amount");
+      let total = 0;
+
+      cart.forEach(item => {
+        const li = document.createElement("li");
+        li.textContent = `${item.name} - $${item.price}`;
+        orderList.appendChild(li);
+        total += item.price;
+      });
+
+      totalAmount.textContent = total;
+    }
+
     document.getElementById("payment-form").addEventListener("submit", e => {
       e.preventDefault();
       alert("Payment successful!");
+      localStorage.removeItem("cart");
+      window.location.href = "index.html";
     });
+
+    displaySummary();
   </script>
 </body>
 </html>
