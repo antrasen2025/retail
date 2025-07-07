@@ -157,4 +157,11 @@ if (signinForm) {
 // -------------------------
 renderProducts();
 renderCart();
+document.addEventListener("DOMContentLoaded", () => {
+  renderProducts();
+  renderCart();
+});
+
+
+
 
