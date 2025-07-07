@@ -37,7 +37,9 @@ function renderProducts() {
       <p>$${p.price}</p>
       <button class="add-to-cart-btn" data-id="${p.id}">Add to Cart</button>
     `;
-    container.appendChild(card);
+    container.appendChild(card); 
+    console.log("✅ Rendering products...");
+    
   });
 
   container.querySelectorAll(".add-to-cart-btn").forEach(btn => {
@@ -155,8 +157,9 @@ if (signinForm) {
 // -------------------------
 // Initialize
 // -------------------------
+
 renderProducts();
-renderCart();
+renderCart
 document.addEventListener("DOMContentLoaded", () => {
   renderProducts();
   renderCart();
