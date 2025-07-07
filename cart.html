@@ -1,23 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-T2LZ2BWC');</script>
-<!-- End Google Tag Manager -->
-  <title>Your Cart</title>
-  <link rel="stylesheet" href="style.css">
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-T2LZ2BWC');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <meta charset="UTF-8" />
+  <title>Your Cart - ShopZone</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T2LZ2BWC"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-  <header><h1>Your Cart</h1></header>
-  <section class="products" id="cart-items"></section>
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T2LZ2BWC"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <header>
+    <div class="navbar">
+      <h1 class="logo">ShopZone</h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="cart.html">Cart</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="payment.html">Payment</a></li>
+          <li><a href="signin.html">Sign In</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="cart-container">
+    <h2>Your Shopping Cart</h2>
+    <section class="products" id="cart-items"></section>
+    <div class="cart-footer" id="cart-footer"></div>
+  </main>
+
   <script src="script.js"></script>
 </body>
 </html>
